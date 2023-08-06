@@ -1,7 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:intl/intl.dart';
 import 'dart:convert';
-import 'lib/todo.dart';
+import 'todo.dart';
 
 /// Todoストアのクラス
 ///

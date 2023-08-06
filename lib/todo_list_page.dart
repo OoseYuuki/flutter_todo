@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'lib/todo_input_page.dart';
-import 'lib/todo_list_store.dart';
-import 'lib/todo.dart';
+import 'todo_input_page.dart';
+import 'todo_list_store.dart';
+import 'todo.dart';
 
-/// Todoリスト画面のクラス
-///
-/// 以下の責務を持つ
-/// ・Todoリスト画面の状態を生成する
 class TodoListPage extends StatefulWidget {
   /// コンストラクタ
   const TodoListPage({Key? key}) : super(key: key);

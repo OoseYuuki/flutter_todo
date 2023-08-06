@@ -8,7 +8,7 @@ class Todo {
   late String detail;
 
   // 完了・未完了
-  late String done;
+  late bool done;
 
   // 作成日時
   late String createDate;

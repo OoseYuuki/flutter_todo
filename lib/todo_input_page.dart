@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'lib/todo_list_store.dart';
-import 'lib/todo.dart';
+import 'todo_list_store.dart';
+import 'todo.dart';
 
 class TodoInputPage extends StatefulWidget {
   final Todo? todo;
@@ -8,7 +8,7 @@ class TodoInputPage extends StatefulWidget {
   const TodoInputPage({Key? key, this.todo}) : super(key: key);
 
   @override
-  State<TodoInputPage> createState() => _TdooInputPageState();
+  State<TodoInputPage> createState() => _TodoInputPageState();
 }
 
 class _TodoInputPageState extends State<TodoInputPage> {
@@ -19,6 +19,8 @@ class _TodoInputPageState extends State<TodoInputPage> {
   late String _title;
 
   late String _detail;
+
+  late bool _done;
 
   late String _createDate;
 
@@ -61,8 +63,10 @@ class _TodoInputPageState extends State<TodoInputPage> {
               autofocus: true,
               decoration: const InputDecoration(
                 labelText: 'タイトル',
-                enabledBorder: BorderSide(
-                  color: Colors.blue,
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.blue,
+                  ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -131,8 +135,8 @@ class _TodoInputPageState extends State<TodoInputPage> {
               ),
             ),
             const SizedBox(height: 30),
-            Text("作成日時 : $_createDate")
-            Text("更新日時 : $_udpateDate")
+            Text("作成日時 : $_createDate"),
+            Text("更新日時 : $_updateDate"),
           ],
         ),
       ),
