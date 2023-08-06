@@ -3,12 +3,6 @@ import 'package:intl/intl.dart';
 import 'dart:convert';
 import 'todo.dart';
 
-/// Todoストアのクラス
-///
-/// ※当クラスはシングルトンとなる
-///
-/// 以下の責務を持つ
-/// ・Todoを取得/追加/更新/削除/保存/読込する
 class TodoListStore {
   /// 保存時のキー
   final String _saveKey = "Todo";
@@ -76,8 +70,6 @@ class TodoListStore {
   /// Todoを保存する
   void save() async {
     var prefs = await SharedPreferences.getInstance();
-    // SharedPreferencesはプリミティブ型とString型リストしか扱えないため、以下の変換を行っている
-    // TodoList形式 → Map形式 → JSON形式 → StrigList形式
     var saveTargetList = _list.map((a) => json.encode(a.toJson())).toList();
     prefs.setStringList(_saveKey, saveTargetList);
   }
@@ -85,8 +77,6 @@ class TodoListStore {
   /// Todoを読込する
   void load() async {
     var prefs = await SharedPreferences.getInstance();
-    // SharedPreferencesはプリミティブ型とString型リストしか扱えないため、以下の変換を行っている
-    // StrigList形式 → JSON形式 → Map形式 → TodoList形式
     var loadTargetList = prefs.getStringList(_saveKey) ?? [];
     _list = loadTargetList.map((a) => Todo.fromJson(json.decode(a))).toList();
   }

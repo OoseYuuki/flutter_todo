@@ -55,14 +55,11 @@ class _TodoListPageState extends State<TodoListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // アプリケーションバーに表示するタイトル
         title: const Text('Todoリスト'),
       ),
       body: ListView.builder(
-        // Todoの件数をリストの件数とする
         itemCount: _store.count(),
         itemBuilder: (context, index) {
-          // インデックスに対応するTodoを取得する
           var item = _store.findByIndex(index);
           return Slidable(
             // 右方向にリストアイテムをスライドした場合のアクション
@@ -92,7 +89,7 @@ class _TodoListPageState extends State<TodoListPage> {
                     setState(() => {_store.delete(item)});
                   },
                   backgroundColor: Colors.red,
-                  icon: Icons.edit,
+                  icon: Icons.delete,
                   label: '削除',
                 ),
               ],
