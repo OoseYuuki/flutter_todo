@@ -5,7 +5,7 @@ class Todo {
   late String title;
 
   // 詳細
-  late Sring detail;
+  late String detail;
 
   // 完了・未完了
   late String done;

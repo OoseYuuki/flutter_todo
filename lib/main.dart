@@ -6,7 +6,7 @@ void main() {
 }
 
 class TodoListApp extends StatelessWidget {
-	const TodoListApp({Key? key} : super(key: key));
+	const TodoListApp({Key? key}) : super(key: key);
 
 	@override
 	Widget build(BuildContext context) {

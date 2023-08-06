@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'todo_list_store.dart';
-import 'todo.dart';
+import 'lib/todo_list_store.dart';
+import 'lib/todo.dart';
 
 class TodoInputPage extends StatefulWidget {
   final Todo? todo;
 
-  const TodoInputPge({Key? key, this.todo}) : super(key: key);
+  const TodoInputPage({Key? key, this.todo}) : super(key: key);
 
   @override
   State<TodoInputPage> createState() => _TdooInputPageState();
